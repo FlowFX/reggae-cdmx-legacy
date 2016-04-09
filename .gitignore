@@ -4,3 +4,5 @@
 /site/cache/*
 /thumbs/*
 /content/*
+deploy.sh
+deploy-exclude.txt
