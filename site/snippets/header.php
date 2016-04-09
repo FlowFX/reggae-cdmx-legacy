@@ -7,5 +7,8 @@
 
   <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
 
+  <?php echo css('assets/css/normalize.css') ?>
+  <?php echo css('assets/css/style.css') ?>
+
 </head>
 <body>
