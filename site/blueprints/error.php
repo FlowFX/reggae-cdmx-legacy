@@ -1,9 +1,9 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Page
-pages: true
-files: true
-icon:  play
+title: Error
+pages: false
+files: false
+icon:  exclamation-circle
 fields:
   title:
     label: Title

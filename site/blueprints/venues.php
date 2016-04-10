@@ -1,9 +1,10 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Page
-pages: true
-files: true
-icon:  play
+title: Venues
+pages: 
+  template: venue
+files: false
+icon:  home
 fields:
   title:
     label: Title
