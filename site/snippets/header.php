@@ -16,11 +16,6 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $site->url() ?>">
 
-  <?php 
-    setlocale(LC_ALL, 'es_MX.UTF-8');
-    date_default_timezone_set('America/Mexico_City');
-  ?>
-
   <?php echo css('assets/css/normalize.css') ?>
   <?php echo css('assets/css/style.css') ?>
 
