@@ -7,3 +7,5 @@
 deploy.sh
 deploy-exclude.txt
 google*.html
+license.php
+*.swo

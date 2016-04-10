@@ -1,9 +1,14 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Page
-pages: true
-files: true
-icon:  play
+title: Events
+pages: 
+  template: event
+  num: 
+    mode: date
+    format: Ymd
+  sort: flip
+files: false
+icon:  calendar
 fields:
   title:
     label: Title
