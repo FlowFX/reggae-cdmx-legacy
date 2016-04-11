@@ -16,7 +16,6 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $site->url() ?>">
 
-  <?php echo css('assets/css/normalize.css') ?>
   <?php echo css('assets/css/style.css') ?>
 
 </head>
