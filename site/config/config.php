@@ -10,3 +10,6 @@ if (file_exists($license)) {
 
 // Use ImageMagick
 c::set('thumbs.driver', 'im');
+
+// Disable minifyhtml plugin
+c::set('MinifyHTML', FALSE);
