@@ -12,7 +12,7 @@ return function($site, $pages, $page) {
 
   foreach($events as $event) {
 
-    $calendar[$event->date('Y')][strftime('%B',$event->date())][] = array(
+    $calendar[$event->date('Y')][strftime('%B',$event->date())][$event->date('W')][] = array(
       "title" => $event->title(),
       "date" => $event->date('d/m'),
       "fbLink"  => $event->fbLink()
