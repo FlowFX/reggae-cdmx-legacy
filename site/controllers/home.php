@@ -12,10 +12,15 @@ return function($site, $pages, $page) {
 
   foreach($events as $event) {
 
+    if($venue = $event->venue()):
+      $venue = $site->find('venues')->find($venue);
+    endif;
+
     $calendar[$event->date('Y')][strftime('%B',$event->date())][] = array(
       "title" => $event->title(),
       "date" => $event->date('d/m'),
-      "fbLink"  => $event->fbLink()
+      "fbLink"  => $event->fbLink(),
+      "venue" => $venue
     );
 
   }

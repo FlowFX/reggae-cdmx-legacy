@@ -27,6 +27,11 @@
             <?php echo $event["title"] ?>
           </a>
 
+          <?php if($event["venue"]):
+            echo "en ";
+            echo $event["venue"]->title();
+            endif ?>
+
         </li>
 
       <?php endforeach ?>
