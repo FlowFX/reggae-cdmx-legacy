@@ -24,13 +24,14 @@
           </span>
 
           <a href="<?php echo $event["fbLink"] ?>" onclick="trackOutboundLink('<?php echo $event["fbLink"] ?>'); return false;">
-            <?php echo $event["title"] ?>
-          </a>
+          <?php
+            echo $event["title"];
+            echo "</a>";
 
-          <?php if($event["venue"]):
-            echo "en ";
-            echo $event["venue"]->title();
-            endif ?>
+            if($event["venue"]):
+              echo ", " . $event["venue"]->title();
+            endif;
+          ?>
 
         </li>
 
