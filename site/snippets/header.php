@@ -8,6 +8,7 @@
   <title><?php echo $site->title()->html() ?></title>
   <meta name="description" content="<?php echo $site->text()->html() ?>">
 
+  <meta property="fb:pages" content="1732208677016508" />
   <meta property="og:description" content="<?php echo $site->text() ?>">
   <meta property="og:image" content="g">
   <meta property="og:locale" content="es">
