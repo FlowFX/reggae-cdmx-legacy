@@ -5,8 +5,8 @@ date_default_timezone_set('America/Mexico_City');
 
 return function($site, $pages, $page) {
 
-  $today = date('Y-m-d');
-  $events = $site->children()->find('events')->children()->filterBy('date', '>=', strtotime($today))->visible()->sortBy('date', 'asc');
+  $midnight = strtotime(date('Y-m-d 00:00:00'));
+  $events = $site->children()->find('events')->children()->filterBy('date', '>=', $midnight)->visible()->sortBy('date', 'asc');
 
   $calendar = array();
 
