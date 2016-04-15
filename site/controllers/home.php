@@ -12,9 +12,9 @@ return function($site, $pages, $page) {
 
   foreach($events as $event) {
 
-    if($venue = $event->venue()):
+    if($venue = $event->venue()) {
       $venue = $site->find('venues')->find($venue);
-    endif;
+    }
 
     $calendar[$event->date('Y')][strftime('%B',$event->date())][$event->date('W')][] = array(
       "title" => $event->title(),
@@ -24,9 +24,6 @@ return function($site, $pages, $page) {
     );
 
   }
-
-  unset($event);
-
 
   // pass $calendar
   return compact('calendar');
