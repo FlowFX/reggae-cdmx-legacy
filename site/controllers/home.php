@@ -1,8 +1,5 @@
 <?php
 
-setlocale(LC_ALL, 'es_MX.UTF-8');
-date_default_timezone_set('America/Mexico_City');
-
 return function($site, $pages, $page) {
 
   $midnight = strtotime(date('Y-m-d 00:00:00'));
