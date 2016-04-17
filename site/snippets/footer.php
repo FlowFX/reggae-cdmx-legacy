@@ -11,18 +11,6 @@
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
     ga('create','UA-34450382-9','auto');ga('send','pageview')
   </script>
-  <script>
-    /**
-    * Track outbound links
-    * cf. https://support.google.com/analytics/answer/1136920
-    * */
-    var trackOutboundLink = function(url) {
-      ga('send', 'event', 'outbound', 'click', url, {
-        'transport': 'beacon',
-        'hitCallback': function(){document.location = url;}
-      });
-    }
-  </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
 </body>

@@ -25,7 +25,7 @@
               <?php echo $event["date"] ?>
             </span>
 
-          <a href="<?php echo $event["fbLink"] ?>" onclick="trackOutboundLink('<?php echo $event["fbLink"] ?>'); return false;">
+          <a href="<?php echo $event["fbLink"] ?>">
           <?php
             echo $event["title"];
             echo "</a>";
