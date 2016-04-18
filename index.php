@@ -1,9 +1,5 @@
 <?php
 
-// set locale and timezone
-setlocale(LC_ALL, 'es_MX.UTF-8');
-date_default_timezone_set('America/Mexico_City');
-
 define('DS', DIRECTORY_SEPARATOR);
 
 // load kirby

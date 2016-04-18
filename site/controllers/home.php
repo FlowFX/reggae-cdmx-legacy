@@ -1,6 +1,11 @@
 <?php
 
+// set locale and timezone
+setlocale(LC_ALL, 'es_MX.UTF-8');
+date_default_timezone_set('America/Mexico_City');
+
 return function($site, $pages, $page) {
+
 
   $midnight = strtotime(date('Y-m-d 00:00:00'));
   $events = $site->children()->find('events')->children()->filterBy('date', '>=', $midnight)->visible()->sortBy('date', 'asc');

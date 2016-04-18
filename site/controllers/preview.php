@@ -1,7 +1,10 @@
 <?php
 
-return function($site, $pages, $page) {
+// set locale and timezone
+setlocale(LC_ALL, 'es_MX.UTF-8');
+date_default_timezone_set('America/Mexico_City');
 
+return function($site, $pages, $page) {
 
 
   $start = $page->date();
@@ -31,6 +34,6 @@ return function($site, $pages, $page) {
   }
 
   // pass $calendar to template
-  return compact('calendar');
+  return compact('calendar','start','end');
 
 };

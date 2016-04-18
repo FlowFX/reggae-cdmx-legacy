@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
 
 
-<div class="column">
+<div class="column home">
 
 
   <h1><?php echo $site->title()->html() ?></h1>

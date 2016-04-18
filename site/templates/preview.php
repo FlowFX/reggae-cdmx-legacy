@@ -6,12 +6,14 @@
 <header>
 
   <h1><?php echo $site->title()->html() ?></h1>
-  <h2><?php echo $page->title()->html() ?></h2>
+
+  <h2>Los eventos de <?php echo strftime('%e de %B', $start) . " a " . strftime('%e de %B', $end) ?>.</h2>
 
   <!-- The date and time when your article was originally published -->
-  <time class="op-published" datetime="<?php echo $page->date('Y-m-d H:i:s T') ?>"></time>
+  <!-- <time class="op-published" datetime="<?php // echo $page->date('Y-m-d H:i:s T') ?>"></time> -->
 
 </header>
+
   <?php
 
   echo $page->text()->kirbytext();
@@ -20,20 +22,22 @@
 
     echo "<h3>" . $key . "</h3>" ?>
 
-
-      <figure>
+ <div class="row">
 
       <?php 
       foreach($day as $key => $event): ?>
 
+        <?php if($event["flyer"]) { ?>
+        <div class="column">
             <figure>
-              <img src="<?php echo $event["flyer"] ?>" />
+                <a href="<?php echo $event["fbLink"] ?>" title="Evento Facebook"><img src="<?php echo $event["flyer"] ?>" /></a>
             </figure>
+        </div>
+        <?php } ?>
 
       <?php endforeach ?>
 
-      </figure>
-
+    </div>
 
       <ul>
       <?php foreach($day as $key => $event): ?>
@@ -56,6 +60,7 @@
       <?php endforeach ?>
       </ul>
     
+   
 
   <?php endforeach ?>
 
