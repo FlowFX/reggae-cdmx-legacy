@@ -2,9 +2,12 @@
 
 title: Preview
 pages: false
-files: false
-icon:  calendar
+files: true
+icon:  clock-o
 fields:
+	title:
+		label: Title
+		type:  text
   date:
     label: Date
     type:  date
