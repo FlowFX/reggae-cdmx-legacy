@@ -21,7 +21,7 @@
               <?php echo $event["date"] ?>
             </span>
 
-          <a href="<?php echo $event["fbLink"] ?>">
+          <a href="<?php echo $event["link"] ?>">
           <?php
             echo $event["title"];
             echo "</a>";

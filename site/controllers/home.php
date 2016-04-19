@@ -21,6 +21,7 @@ return function($site, $pages, $page) {
     $calendar[$event->date('Y')][strftime('%B',$event->date())][$event->date('W')][] = array(
       "title" => $event->title(),
       "date" => $event->date('d/m'),
+      "link" => $event->url(),
       "fbLink"  => $event->fbLink(),
       "venue" => $venue
     );
