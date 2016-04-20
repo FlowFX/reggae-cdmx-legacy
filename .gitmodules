@@ -4,3 +4,6 @@
 [submodule "panel"]
 	path = panel
 	url = https://github.com/getkirby/panel
+[submodule "site/plugins/minifyhtml"]
+	path = site/plugins/minifyhtml
+	url = https://github.com/ian-cox/Kirby-MinifyHTML.git

@@ -2,6 +2,8 @@
 // Milligram Sass Modules
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@import "normalize";
+
 @import "Color";
 @import "Base";
 @import "Blockquote";
@@ -38,6 +40,21 @@ span.date {
   font-weight: bold;
 }
 
+
+// Preview
+.preview img {
+	width: 100%;
+}
+.preview figure {
+	margin: 0;
+	padding: 0;
+}
+.preview .column {
+  max-width: 369px;
+}
+.preview h2 {
+  font-size: 1.5em;
+}
 
 
 // Footer

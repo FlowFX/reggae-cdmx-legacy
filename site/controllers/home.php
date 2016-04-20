@@ -1,27 +1,31 @@
 <?php
 
+// set locale and timezone
 setlocale(LC_ALL, 'es_MX.UTF-8');
 date_default_timezone_set('America/Mexico_City');
 
 return function($site, $pages, $page) {
 
-  $today = date('Y-m-d');
-  $events = $site->children()->find('events')->children()->filterBy('date', '>=', strtotime($today))->visible()->sortBy('date', 'asc');
+
+  $midnight = strtotime(date('Y-m-d 00:00:00'));
+  $events = $site->children()->find('events')->children()->filterBy('date', '>=', $midnight)->visible()->sortBy('date', 'asc');
 
   $calendar = array();
 
   foreach($events as $event) {
 
-    $calendar[$event->date('Y')][strftime('%B',$event->date())][] = array(
+    if($venue = $event->venue()) {
+      $venue = $site->find('venues')->find($venue);
+    }
+
+    $calendar[$event->date('Y')][strftime('%B',$event->date())][$event->date('W')][] = array(
       "title" => $event->title(),
       "date" => $event->date('d/m'),
-      "fbLink"  => $event->fbLink()
+      "fbLink"  => $event->fbLink(),
+      "venue" => $venue
     );
 
   }
-
-  unset($event);
-
 
   // pass $calendar
   return compact('calendar');

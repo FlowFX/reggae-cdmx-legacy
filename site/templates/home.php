@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
 
 
-<div class="column">
+<div class="column home">
 
 
   <h1><?php echo $site->title()->html() ?></h1>
@@ -13,25 +13,35 @@
     foreach($year as $key => $month):
       echo "<h3>" . $key . "</h3>";
 
+      foreach($month as $key => $week):
+
       echo "<ul>";
 
-      foreach($month as $key => $event): ?>
+        foreach($week as $key => $event): ?>
 
-        <li class="event">
+          <li class="event">
 
-          <span class="date">
-            <?php echo $event["date"] ?>
-          </span>
+            <span class="date">
+              <?php echo $event["date"] ?>
+            </span>
 
-          <a href="<?php echo $event["fbLink"] ?>" onclick="trackOutboundLink('<?php echo $event["fbLink"] ?>'); return false;">
-            <?php echo $event["title"] ?>
-          </a>
+          <a href="<?php echo $event["fbLink"] ?>">
+          <?php
+            echo $event["title"];
+            echo "</a>";
 
-        </li>
+            if($event["venue"]):
+              echo ", " . $event["venue"]->title();
+            endif;
+          ?>
 
-      <?php endforeach ?>
+          </li>
+
+        <?php endforeach ?>
 
       </ul>
+
+      <?php endforeach ?>
 
     <?php endforeach ?>
 
