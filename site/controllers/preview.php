@@ -8,7 +8,7 @@ return function($site, $pages, $page) {
 
 
   $start = $page->date();
-  $end = strtotime('+7 days', $start);
+  $end = strtotime('+6 days', $start);
   // Get all events for the 7 days of the preview post
   $events = $site->children()->find('events')->children()->filterBy('date', '>=', $start)->filterBy('date', '<=', $end)->visible()->sortBy('date', 'asc');
 
