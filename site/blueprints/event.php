@@ -13,12 +13,23 @@ fields:
     label: Date
     type:  date
     required: true
+    width: 1/2
+  time:
+    label: Time
+    type: time
+    interval: 30
+    default: 19:00
+    width: 1/2
   venue:
     label: Venue
     type:  select
     options: query
     query:
       page: venues
+  artists:
+    label: Artists
+    type:  tags
+    index: siblings
   fbLink:
     label: Facebook Event
     type:  url
