@@ -1,7 +1,5 @@
 <?php snippet('header') ?>
 
-  <h1><?php echo $site->title()->html() ?></h1>
-
   <?php
 
   foreach($calendar as $key => $year):

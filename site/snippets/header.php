@@ -29,3 +29,5 @@
 <body>
 
   <div class="container <?php echo $page->template() ?>">
+
+    <h1><?php echo $site->title()->html() ?></h1>
