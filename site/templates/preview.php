@@ -1,8 +1,6 @@
 <?php snippet('header') ?>
 
 
-<div class="column preview">
-
 <header>
 
   <h1><?php echo $site->title()->html() ?></h1>
@@ -64,10 +62,6 @@
    
 
   <?php endforeach ?>
-
-
-
-</div> <!-- .column -->
 
 
 <?php snippet('footer') ?>

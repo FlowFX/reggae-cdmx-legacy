@@ -1,11 +1,11 @@
 
-  </div> <!-- .row -->
 
-  <div class="footer">
+	</div> <!-- .container -->
+
+  <div class="container footer">
     <p>Made by <a href = '&#109;&#97;&#105;&#108;&#116;&#111;:&#102;&#108;&#111;&#119;&#102;&#120;&#64;&#114;&#101;&#103;&#103;&#97;&#101;-&#99;&#100;&#109;&#120;&#46;&#99;&#111;&#109;'>FlowFX</a>
   </div> <!-- .footer -->
 
-</div> <!-- .container -->
 
   <script>
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

@@ -1,6 +1,5 @@
 <?php snippet('header') ?>
 
-<div class="column">
 
 <h1><?php echo $page->title()->html() ?></h1>
 
@@ -21,6 +20,5 @@
 
 </ul>
 
-</div> <!-- .column -->
 
 <?php snippet('footer') ?>

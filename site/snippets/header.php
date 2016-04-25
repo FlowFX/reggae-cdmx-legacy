@@ -28,7 +28,4 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
-
-
+  <div class="container <?php echo $page->template() ?>">

@@ -1,9 +1,5 @@
 <?php snippet('header') ?>
 
-
-<div class="column home">
-
-
   <h1><?php echo $site->title()->html() ?></h1>
 
   <?php
@@ -46,9 +42,5 @@
     <?php endforeach ?>
 
   <?php endforeach ?>
-
-
-
-</div> <!-- .column -->
 
 <?php snippet('footer') ?>
