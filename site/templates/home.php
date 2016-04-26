@@ -12,14 +12,29 @@
       foreach($month as $key => $week):
 
       echo "<ul>";
+      $i = 0;
 
-        foreach($week as $key => $event): ?>
+        foreach($week as $key => $event): 
+
+        //$i = array_search($key, array_keys($week));
+        $i++;
+          ?>
+
+          
+
 
           <li class="event">
 
+
+          
             <span class="date">
-              <?php echo $event["date"] ?>
+            <?php if($i == 1) {
+               echo $event["date"];
+            } else {
+              echo  str_repeat('&nbsp;', 10);
+            } ?>
             </span>
+          
 
           <a href="<?php echo $event["fbLink"] ?>">
           <?php
