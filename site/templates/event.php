@@ -9,14 +9,14 @@
     <p><?php echo strftime('%a, %e %b', $page->date()) ?><br />
 
 
-    <?php if($venue = $page->venueTitle()) {
-      echo $venue;
-    }?>
+    <?php if($page->venue()->isNotEmpty()) {
+      echo $page->venueTitle();
+    } ?>
 
     <br/ >
 
  
-    <?php if($page->fbLink()) {
+    <?php if($page->fbLink()->isNotEmpty()) {
 
 ?>
      <a href="<?php echo $page->fbLink() ?>"
