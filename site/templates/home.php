@@ -1,44 +1,66 @@
 <?php snippet('header') ?>
 
-  <?php
+<?php
 
-  foreach($calendar as $key => $year):
+foreach($calendar as $key => $year) {
+  foreach($year as $key => $month) {
+    ?>
 
-    foreach($year as $key => $month):
-      echo "<h3>" . $key . "</h3>";
+    <div class="ttable">
+      <div class="ttitle">
+        <h3><?php echo $key ?></h3>
+      </div> <!-- .ttitle -->
 
-      foreach($month as $key => $week):
+      <?php 
 
-      echo "<ul>";
+      foreach($month as $key => $week) { 
+    
 
-        foreach($week as $key => $event): ?>
+        foreach($week as $key => $day) { ?>
 
-          <li class="event">
+          <div class="trow">
 
-            <span class="date">
-              <?php echo $event["date"] ?>
-            </span>
+            <div class="tcell">
+              <?php echo $key ?>
+            </div>    
 
-          <a href="<?php echo $event["link"] ?>">
-          <?php
-            echo $event["title"];
-            echo "</a>";
+            <div class="tcell tcellright">        
 
-            if($event["venue"]):
-              echo ", " . $event["venue"]->title();
-            endif;
-          ?>
+              <ul>
+                <?php foreach($day as $key => $event) { ?>
+                  <li>
+                    <a href="<?php echo $event["link"] ?>">
+                      <?php echo $event["title"] . "</a>";
+                      if($event["venue"]) {
+                      echo ", " . $event["venue"]->title();
+                    } ?>
+                  </li>
+                <?php } ?>
+              </ul>
+            </div>
 
-          </li>
+          </div>
+    
 
-        <?php endforeach ?>
+      <?php } ?> <!-- $event -->
 
-      </ul>
+      <div class="tseparator"></div>
 
-      <?php endforeach ?>
+    <?php } ?> <!-- $week -->
 
-    <?php endforeach ?>
+    </div> <!-- ..ttable -->
 
-  <?php endforeach ?>
+  <?php }  // $month 
 
-<?php snippet('footer') ?>
+ } ?> <!-- $year -->
+
+<hr>
+
+<h2>Radios en línea</h2>
+<p>
+  <a href="http://www.nattyradio.com/">Natty Radio</a><br />
+  <a href="http://dubinthecontrol.com.ar/">Dub In The Control</a>
+</p>
+
+
+<?php snippet('footer');
