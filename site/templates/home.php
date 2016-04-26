@@ -1,8 +1,5 @@
 <?php snippet('header') ?>
 
-<h1><?php echo $site->title()->html() ?></h1>
-
-
 <?php
 
 foreach($calendar as $key => $year) {
@@ -24,7 +21,7 @@ foreach($calendar as $key => $year) {
           <div class="trow">
 
             <div class="tcell">
-              <?php echo $key ?>
+              <?php echo strftime('%e/%m', $key) ?>
             </div>    
 
             <div class="tcell tcellright">        
@@ -32,7 +29,7 @@ foreach($calendar as $key => $year) {
               <ul>
                 <?php foreach($day as $key => $event) { ?>
                   <li>
-                    <a href="<?php echo $event["fbLink"] ?>">
+                    <a href="<?php echo $event["link"] ?>">
                       <?php echo $event["title"] . "</a>";
                       if($event["venue"]) {
                       echo ", " . $event["venue"]->title();

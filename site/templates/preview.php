@@ -3,8 +3,6 @@
 
 <header>
 
-  <h1><?php echo $site->title()->html() ?></h1>
-
   <h2>Los eventos de <?php echo strftime('%e de %B', $start) . " a " . strftime('%e de %B', $end) ?>.</h2>
 
   <p>Si falta algo, <a href="mailto:flowfx@reggae-cdmx.com" title="¡Envíame un correo electrónico!">¡Envíame un correo!</a><br/>

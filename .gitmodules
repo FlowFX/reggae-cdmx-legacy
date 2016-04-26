@@ -7,3 +7,6 @@
 [submodule "site/plugins/minifyhtml"]
 	path = site/plugins/minifyhtml
 	url = https://github.com/ian-cox/Kirby-MinifyHTML.git
+[submodule "assets/js/deep-link.js"]
+	path = assets/js/deep-link.js
+	url = https://github.com/timseverien/deep-link.js.git
