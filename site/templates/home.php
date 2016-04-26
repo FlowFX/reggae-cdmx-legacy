@@ -33,10 +33,8 @@ foreach($calendar as $key => $year) {
                 <?php foreach($day as $key => $event) { ?>
                   <li>
                     <a href="<?php echo $event["fbLink"] ?>">
-                      <?php echo $event["title"] ?>
-                    </a>
-
-                    <?php if($event["venue"]) {
+                      <?php echo $event["title"] . "</a>";
+                      if($event["venue"]) {
                       echo ", " . $event["venue"]->title();
                     } ?>
                   </li>
