@@ -5,6 +5,7 @@
 /thumbs/*
 /content/*
 deploy.sh
+deploy-live.sh
 deploy-exclude.txt
 google*.html
 license.php
