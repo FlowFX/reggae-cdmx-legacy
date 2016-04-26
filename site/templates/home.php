@@ -1,61 +1,62 @@
 <?php snippet('header') ?>
 
-  <h1><?php echo $site->title()->html() ?></h1>
-
-  <?php
-
-  foreach($calendar as $key => $year):
-
-    foreach($year as $key => $month):
-      echo "<h3>" . $key . "</h3>";
-
-      foreach($month as $key => $week):
-
-      echo "<ul>";
-      $i = 0;
-
-        foreach($week as $key => $event): 
-
-        //$i = array_search($key, array_keys($week));
-        $i++;
-          ?>
-
-          
+<h1><?php echo $site->title()->html() ?></h1>
 
 
-          <li class="event">
+<?php
 
+foreach($calendar as $key => $year) {
+  foreach($year as $key => $month) {
+    ?>
 
-          
-            <span class="date">
-            <?php if($i == 1) {
-               echo $event["date"];
-            } else {
-              echo  str_repeat('&nbsp;', 10);
-            } ?>
-            </span>
-          
+    <div class="ttable">
+      <div class="ttitle">
+        <h3><?php echo $key ?></h3>
+      </div> <!-- .ttitle -->
 
-          <a href="<?php echo $event["fbLink"] ?>">
-          <?php
-            echo $event["title"];
-            echo "</a>";
+      <?php 
 
-            if($event["venue"]):
-              echo ", " . $event["venue"]->title();
-            endif;
-          ?>
+      foreach($month as $key => $week) { 
+    
 
-          </li>
+        foreach($week as $key => $day) { ?>
 
-        <?php endforeach ?>
+          <div class="trow">
 
-      </ul>
+            <div class="tcell">
+              <?php echo $key ?>
+            </div>    
 
-      <?php endforeach ?>
+            <div class="tcell tcellright">        
 
-    <?php endforeach ?>
+              <ul>
+                <?php foreach($day as $key => $event) { ?>
+                  <li>
+                    <a href="<?php echo $event["fbLink"] ?>">
+                      <?php echo $event["title"] ?>
+                    </a>
 
-  <?php endforeach ?>
+                    <?php if($event["venue"]) {
+                      echo ", " . $event["venue"]->title();
+                    } ?>
+                  </li>
+                <?php } ?>
+              </ul>
+            </div>
 
-<?php snippet('footer') ?>
+          </div>
+    
+
+      <?php } ?> <!-- $event -->
+
+      <div class="tseparator"></div>
+
+    <?php } ?> <!-- $week -->
+
+    </div> <!-- ..ttable -->
+
+  <?php }  // $month 
+
+ } ?> <!-- $year -->
+
+<?php snippet('footer');
