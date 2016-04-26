@@ -6,19 +6,26 @@
   <div class="column">
     <h2><?php echo $page->title()->html() ?></h2>
 
-    <p>Dato: <?php echo $page->date('d/m') ?></p>
+    <p>Dato: <?php echo strftime('%a, %e %b', $page->date()) ?><br />
 
-    <p>Lugar: 
-      <?php if($venue = $page->venue()) {
 
-        $venue = $site->find('venues')->find($venue);
-        echo $venue->title();
-      } ?>
-    </p>
+    <?php if($venue = $page->venueTitle()) {
+      echo "Lugar: " . $venue;
+    }?>
 
-  <p>
-    <a href="<?php echo $page->fblink()->html() ?>" title="Evento Facebook">Facebook</a>
-    </p>
+    <br/ >
+
+ 
+    <?php if($page->fbLink()) {
+
+?>
+     <a href="<?php echo $page->fbLink() ?>"
+        data-app="<?php echo $page->fbDeepLink() ?>"
+        title="Evento de Facebook">
+        Facebook</a>
+    <?php } ?>
+
+</p>
 
     <?php echo $page->text()->kirbytext() ?>
 
@@ -40,6 +47,8 @@
     
 
   </div> <!-- .row -->
+
+   <?php echo js('assets/js/deep-link.js/src/deep-link.js', false) ?>
 
 
 
