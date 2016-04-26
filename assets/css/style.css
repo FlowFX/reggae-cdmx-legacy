@@ -890,3 +890,30 @@ span.date {
 
 .footer p {
   font-size: 80%; }
+
+.ttable {
+  display: table; }
+
+.ttitle {
+  display: table-caption; }
+
+.theading {
+  display: table-row; }
+
+.trow {
+  display: table-row; }
+
+.tcell {
+  display: table-cell;
+  border: none;
+  padding-right: 8px; }
+
+.tcellright {
+  padding-right: 0 !important; }
+
+.tcell ul {
+  margin-bottom: 0; }
+
+.tseparator {
+  display: block;
+  height: 1.0em; }

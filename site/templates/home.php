@@ -1,46 +1,71 @@
 <?php snippet('header') ?>
 
-  <h1><?php echo $site->title()->html() ?></h1>
+<h1><?php echo $site->title()->html() ?></h1>
 
-  <?php
 
-  foreach($calendar as $key => $year):
+<?php
 
-    foreach($year as $key => $month):
-      echo "<h3>" . $key . "</h3>";
+foreach($calendar as $key => $year) {
+  foreach($year as $key => $month) {
+    ?>
 
-      foreach($month as $key => $week):
+    <div class="ttable">
+      <div class="ttitle">
+        <h3><?php echo $key ?></h3>
+      </div> <!-- .ttitle -->
 
-      echo "<ul>";
+      <?php 
 
-        foreach($week as $key => $event): ?>
+      foreach($month as $key => $week) { 
+    
 
-          <li class="event">
+        foreach($week as $key => $day) { ?>
 
-            <span class="date">
-              <?php echo $event["date"] ?>
-            </span>
+          <div class="trow">
 
-          <a href="<?php echo $event["fbLink"] ?>">
-          <?php
-            echo $event["title"];
-            echo "</a>";
+            <div class="tcell">
+              <?php echo $key ?>
+            </div>    
 
-            if($event["venue"]):
-              echo ", " . $event["venue"]->title();
-            endif;
-          ?>
+            <div class="tcell tcellright">        
 
-          </li>
+              <ul>
+                <?php foreach($day as $key => $event) { ?>
+                  <li>
+                    <a href="<?php echo $event["fbLink"] ?>">
+                      <?php echo $event["title"] ?>
+                    </a>
 
-        <?php endforeach ?>
+                    <?php if($event["venue"]) {
+                      echo ", " . $event["venue"]->title();
+                    } ?>
+                  </li>
+                <?php } ?>
+              </ul>
+            </div>
 
-      </ul>
+          </div>
+    
 
-      <?php endforeach ?>
+      <?php } ?> <!-- $event -->
 
-    <?php endforeach ?>
+      <div class="tseparator"></div>
 
-  <?php endforeach ?>
+    <?php } ?> <!-- $week -->
 
-<?php snippet('footer') ?>
+    </div> <!-- ..ttable -->
+
+  <?php }  // $month 
+
+ } ?> <!-- $year -->
+
+<hr>
+
+<h2>Radios en línea</h2>
+<p>
+  <a href="http://www.nattyradio.com/">Natty Radio</a><br />
+  <a href="http://dubinthecontrol.com.ar/">Dub In The Control</a>
+</p>
+
+
+<?php snippet('footer');
