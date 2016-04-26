@@ -6,11 +6,11 @@
   <div class="column">
     <h2><?php echo $page->title()->html() ?></h2>
 
-    <p>Dato: <?php echo strftime('%a, %e %b', $page->date()) ?><br />
+    <p><?php echo strftime('%a, %e %b', $page->date()) ?><br />
 
 
     <?php if($venue = $page->venueTitle()) {
-      echo "Lugar: " . $venue;
+      echo $venue;
     }?>
 
     <br/ >
