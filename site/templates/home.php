@@ -59,4 +59,13 @@ foreach($calendar as $key => $year) {
 
  } ?> <!-- $year -->
 
+<hr>
+
+<h2>Radios en línea</h2>
+<p>
+  <a href="http://www.nattyradio.com/">Natty Radio</a><br />
+  <a href="http://dubinthecontrol.com.ar/">Dub In The Control</a>
+</p>
+
+
 <?php snippet('footer');
