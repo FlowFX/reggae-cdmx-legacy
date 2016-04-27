@@ -56,6 +56,7 @@ foreach($calendar as $key => $year) {
 
 <hr>
 
+<a name="radios"></a>
 <h2>Radios en línea</h2>
 <p>
   <a href="http://www.nattyradio.com/">Natty Radio</a><br />
