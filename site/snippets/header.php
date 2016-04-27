@@ -30,4 +30,4 @@
 
   <div class="container <?php echo $page->template() ?>">
 
-    <h1><?php echo $site->title()->html() ?></h1>
+    <h1><a href="<?php echo $site->url() ?>"><?php echo $site->title()->html() ?></a></h1>

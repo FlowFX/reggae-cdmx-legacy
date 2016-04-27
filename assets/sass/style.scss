@@ -31,6 +31,10 @@ body {
 a {
   text-decoration: underline;
 }
+h1 a {
+  text-decoration: none;
+  color: white;
+}
 
 li {
   list-style-type: none;
@@ -39,6 +43,8 @@ li {
 span.date {
   font-weight: bold;
 }
+
+
 
 
 // Preview
