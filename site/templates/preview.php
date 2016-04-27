@@ -19,6 +19,28 @@
 
     echo "<h3>" . $key . "</h3>" ?>
 
+  <ul>
+      <?php foreach($day as $key => $event): ?>
+
+          <li>
+
+            <a href="<?php echo $event["link"] ?>">
+            <?php
+              echo $event["title"];
+              ?>
+              </a>
+
+<?php
+              if($event["venue"]):
+                echo ", " . $event["venue"]->title();
+              endif;
+            ?>
+        </li>
+
+      <?php endforeach ?>
+      </ul>
+    
+
  <div class="row">
 
       <?php 
@@ -36,27 +58,7 @@
 
     </div>
 
-      <ul>
-      <?php foreach($day as $key => $event): ?>
-
-          <li>
-
-            <a href="<?php echo $event["fbLink"] ?>">
-            <?php
-              echo $event["title"];
-              ?>
-              </a>
-
-<?php
-              if($event["venue"]):
-                echo ", " . $event["venue"]->title();
-              endif;
-            ?>
-        </li>
-
-      <?php endforeach ?>
-      </ul>
-    
+      
    
 
   <?php endforeach ?>
