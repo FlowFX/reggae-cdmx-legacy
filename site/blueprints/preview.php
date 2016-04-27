@@ -5,9 +5,9 @@ pages: false
 files: true
 icon:  clock-o
 fields:
-	title:
-		label: Title
-		type:  text
+  title:
+    label: Title
+    type:  text
   date:
     label: Date
     type:  date
