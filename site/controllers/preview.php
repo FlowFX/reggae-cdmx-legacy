@@ -27,6 +27,7 @@ return function($site, $pages, $page) {
       "title" => $event->title(),
       "date" => $event->date('d/m'),
       "fbLink"  => $event->fbLink(),
+      "link" => $event->url(),
       "venue" => $venue,
       "flyer" => $flyer
     );

@@ -10,7 +10,7 @@
   <link rel="canonical" href="<?php echo $page->url() ?>">
 
   <meta property="fb:pages" content="1732208677016508" />
-  <meta property="og:description" content="<?php echo $page->text() ?>">
+  <meta property="og:description" content="<?php echo $site->text() ?>">
 
   <?php if($image = $page->image()) { ?>
     <meta property="og:image" content="<?php echo $image->url() ?>">
@@ -28,7 +28,6 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
+  <div class="container <?php echo $page->template() ?>">
 
-
+    <h1><?php echo $site->title()->html() ?></h1>

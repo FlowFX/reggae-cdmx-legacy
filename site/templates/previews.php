@@ -1,9 +1,5 @@
 <?php snippet('header') ?>
 
-<div class="column">
-
-<h1><?php echo $page->title()->html() ?></h1>
-
 <?php echo $page->text()->kirbytext() ?>
 
 <ul>
@@ -21,6 +17,5 @@
 
 </ul>
 
-</div> <!-- .column -->
 
 <?php snippet('footer') ?>

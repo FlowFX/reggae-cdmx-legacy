@@ -1,11 +1,7 @@
 <?php snippet('header') ?>
 
 
-<div class="column preview">
-
 <header>
-
-  <h1><?php echo $site->title()->html() ?></h1>
 
   <h2>Los eventos de <?php echo strftime('%e de %B', $start) . " a " . strftime('%e de %B', $end) ?>.</h2>
 
@@ -22,6 +18,28 @@
   foreach($calendar as $key => $day):
 
     echo "<h3>" . $key . "</h3>" ?>
+
+  <ul>
+      <?php foreach($day as $key => $event): ?>
+
+          <li>
+
+            <a href="<?php echo $event["link"] ?>">
+            <?php
+              echo $event["title"];
+              ?>
+              </a>
+
+<?php
+              if($event["venue"]):
+                echo ", " . $event["venue"]->title();
+              endif;
+            ?>
+        </li>
+
+      <?php endforeach ?>
+      </ul>
+    
 
  <div class="row">
 
@@ -40,34 +58,10 @@
 
     </div>
 
-      <ul>
-      <?php foreach($day as $key => $event): ?>
-
-          <li>
-
-            <a href="<?php echo $event["fbLink"] ?>">
-            <?php
-              echo $event["title"];
-              ?>
-              </a>
-
-<?php
-              if($event["venue"]):
-                echo ", " . $event["venue"]->title();
-              endif;
-            ?>
-        </li>
-
-      <?php endforeach ?>
-      </ul>
-    
+      
    
 
   <?php endforeach ?>
-
-
-
-</div> <!-- .column -->
 
 
 <?php snippet('footer') ?>

@@ -1,54 +1,67 @@
 <?php snippet('header') ?>
 
+<?php
 
-<div class="column home">
+foreach($calendar as $key => $year) {
+  foreach($year as $key => $month) {
+    ?>
+
+    <div class="ttable">
+      <div class="ttitle">
+        <h3><?php echo $key ?></h3>
+      </div> <!-- .ttitle -->
+
+      <?php 
+
+      foreach($month as $key => $week) { 
+    
+
+        foreach($week as $key => $day) { ?>
+
+          <div class="trow">
+
+            <div class="tcell">
+              <?php echo strftime('%e/%m', $key) ?>
+            </div>    
+
+            <div class="tcell tcellright">        
+
+              <ul>
+                <?php foreach($day as $key => $event) { ?>
+                  <li>
+                    <a href="<?php echo $event["link"] ?>">
+                      <?php echo $event["title"] . "</a>";
+                      if($event["venue"]) {
+                      echo ", " . $event["venue"]->title();
+                    } ?>
+                  </li>
+                <?php } ?>
+              </ul>
+            </div>
+
+          </div>
+    
+
+      <?php } ?> <!-- $event -->
+
+      <div class="tseparator"></div>
+
+    <?php } ?> <!-- $week -->
+
+    </div> <!-- ..ttable -->
+
+  <?php }  // $month 
+
+ } ?> <!-- $year -->
+
+<hr>
+
+<a name="radios"></a>
+<h2>Radios en línea</h2>
+<p>
+  <a href="http://www.nattyradio.com/">Natty Radio</a><br />
+  <a href="http://dubinthecontrol.com.ar/">Dub In The Control</a>
+</p>
 
 
-  <h1><?php echo $site->title()->html() ?></h1>
-
-  <?php
-
-  foreach($calendar as $key => $year):
-
-    foreach($year as $key => $month):
-      echo "<h3>" . $key . "</h3>";
-
-      foreach($month as $key => $week):
-
-      echo "<ul>";
-
-        foreach($week as $key => $event): ?>
-
-          <li class="event">
-
-            <span class="date">
-              <?php echo $event["date"] ?>
-            </span>
-
-          <a href="<?php echo $event["fbLink"] ?>">
-          <?php
-            echo $event["title"];
-            echo "</a>";
-
-            if($event["venue"]):
-              echo ", " . $event["venue"]->title();
-            endif;
-          ?>
-
-          </li>
-
-        <?php endforeach ?>
-
-      </ul>
-
-      <?php endforeach ?>
-
-    <?php endforeach ?>
-
-  <?php endforeach ?>
-
-
-
-</div> <!-- .column -->
-
-<?php snippet('footer') ?>
+<?php snippet('footer');
