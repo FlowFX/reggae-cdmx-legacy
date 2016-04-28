@@ -6,7 +6,7 @@
   <div class="column">
     <h2><?php echo $page->title()->html() ?></h2>
 
-    <p><?php echo strftime('%a, %e %b', $page->date()) ?><br />
+    <p><?php echo strftime('%A, %e %b', $page->date()) ?><br />
 
 
     <?php if($page->venue()->isNotEmpty()) {
