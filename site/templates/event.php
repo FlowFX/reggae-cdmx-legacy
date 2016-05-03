@@ -38,7 +38,17 @@
 
 
       <?php if($image = $page->image()): ?>
-        <img src="<?php echo $image->url() ?>" />
+        <img 
+          src="<?php echo thumb($image, array('width' => 370), false) ?>" 
+          srcset="<?php 
+                    echo thumb($image, array('width' => 370), false) . ' 370w,';
+                    echo thumb($image, array('width' => 450), false) . ' 450w,';
+                    echo thumb($image, array('width' => 610), false) . ' 610w,';
+                  ?>"
+          sizes="100vw"
+          alt="Flyer: <?php echo $page->title() . ", " . $page->date() ?>"
+
+        />
       <?php endif ?>
     </div>
 

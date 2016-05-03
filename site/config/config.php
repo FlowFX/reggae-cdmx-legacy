@@ -29,8 +29,5 @@ if (file_exists($license)) {
 }
 
 
-// https://getkirby.com/docs/cheatsheet/options/thumbs-driver
-c::set('thumbs.driver', 'im');
-
 // https://github.com/groenewege/kirby-auto-publish
 c::set('autopublish.templates', array('event'));
