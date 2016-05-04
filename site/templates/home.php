@@ -20,12 +20,8 @@ foreach($calendar as $key => $year) {
 
           <div class="trow">
 
-            <div class="tcell">
-              <?php echo strftime('%a', $key) ?>
-            </div>    
-
-            <div class="tcell">
-              <?php echo strftime('%e/%m', $key) ?>
+            <div class="tcell tcelldate">
+              <?php echo strftime('%a', $key) . " " . strftime('%e/%m', $key) ?>
             </div>    
 
             <div class="tcell tcellright">        

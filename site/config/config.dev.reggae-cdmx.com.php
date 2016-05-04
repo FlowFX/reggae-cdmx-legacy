@@ -7,5 +7,5 @@ c::set('thumbs.driver', 'im');
 c::set('cachebuster', true);
 
 // https://getkirby.com/docs/advanced/caching
-c::set('cache', true);
+c::set('cache', false);
 c::set('cache.driver', 'memcached');
