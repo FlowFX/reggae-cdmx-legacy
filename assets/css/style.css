@@ -924,3 +924,7 @@ img {
 .tseparator {
   display: block;
   height: 1.0em; }
+
+@media (min-width: 30rem) {
+  .tcelldate {
+    min-width: 9.0rem; } }
