@@ -56,9 +56,7 @@
 
     
 
-  </div> <!-- .row -->
-
-   <?php echo js('assets/js/deep-link.js/src/deep-link.js', false) ?>
+  </div> <!-- .row --> 
 
 
 

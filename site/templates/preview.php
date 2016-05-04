@@ -49,7 +49,7 @@
         <?php if($event["flyer"]) { ?>
         <div class="column">
             <figure>
-                <a href="<?php echo $event["fbLink"] ?>" title="Evento Facebook">
+                <a href="<?php echo $event["link"] ?>" title="Detailes del evento">
                   <img 
                     src="<?php echo $event["flyerSmall"] ?>"
                     srcset="<?php echo $event["flyerSmall"] ?> 370w, 
