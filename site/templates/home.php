@@ -21,7 +21,7 @@ foreach($calendar as $key => $year) {
           <div class="trow">
 
             <div class="tcell tcelldate">
-              <?php echo strftime('%a', $key) . " " . strftime('%e/%m', $key) ?>
+              <?php echo strftime('%a', $key) . "&nbsp;" . strftime('%e/%m', $key) ?>
             </div>    
 
             <div class="tcell tcellright">        

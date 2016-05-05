@@ -926,9 +926,8 @@ img {
   height: 1.0em; }
 
 .tcelldate {
-  font-size: 95%; }
+  font-size: 90%; }
 
 @media (min-width: 40rem) {
   .tcelldate {
-    min-width: 9.0rem;
     font-size: inherit; } }

@@ -114,11 +114,10 @@ padding-right: 0 !important;
 
 // day and date linebreak for very small screens. prevent linebreak on large screens.
 .tcelldate {
-  font-size: 95%;
+  font-size: 90%;
 }
 @media (min-width: 40.0rem) { 
   .tcelldate {
-    min-width: 9.0rem;
     font-size: inherit;
   }
 }
