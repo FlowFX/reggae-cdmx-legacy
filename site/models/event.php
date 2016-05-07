@@ -8,6 +8,13 @@ class EventPage extends Page {
 
     return $venue->title();
   }
+  public function venueAddress() {
+
+    $venue = $this->venue();
+    $venue = $this->site()->find('venues')->find($venue);
+
+    return $venue->address();
+  }
   public function fbDeepLink() {
 
   	$fbLink = $this->fbLink();
