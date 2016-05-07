@@ -8,6 +8,12 @@ fields:
   title:
     label: Name
     type:  text
+  address:
+    label: Address
+    type:  text
+  mapsLink:
+    label: Google maps link
+    type:  url
   link:
     label: Homepage
     type:  url
