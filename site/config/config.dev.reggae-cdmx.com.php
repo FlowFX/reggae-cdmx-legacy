@@ -9,3 +9,4 @@ c::set('cachebuster', true);
 // https://getkirby.com/docs/advanced/caching
 c::set('cache', false);
 c::set('cache.driver', 'memcached');
+c::set('cache.ignore', array('sitemap'));
