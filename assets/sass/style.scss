@@ -25,7 +25,13 @@ body {
   background-color: black;
 }
 .container {
-  padding: 0.5em 1em;
+  padding: 0.9rem 0.5rem;
+  //padding: 0.5em 0.5rem;
+}
+@media (min-width: 40.0rem) { 
+  .container {
+    padding: 0.9rem 1rem;
+  }
 }
 
 a {
