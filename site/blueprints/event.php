@@ -10,16 +10,13 @@ fields:
     type:  text
     required: true
   date:
-    label: Date
-    type:  date
-    required: true
-    width: 1/2
-  time:
-    label: Time
-    type: time
-    interval: 30
-    default: 19:00
-    width: 1/2
+    label: Date and Time
+    type:  datetime
+    date:
+      format: YYYY-MM-DD
+    time:
+      format: 24
+      interval: 30
   venue:
     label: Venue
     type:  select
