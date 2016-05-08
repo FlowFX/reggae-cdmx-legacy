@@ -12,6 +12,9 @@
   </div> <!-- .footer -->
 
 
+
+  <?php echo js('@auto') ?>
+
   <script>
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
     ga('create','UA-34450382-9','auto');ga('send','pageview')

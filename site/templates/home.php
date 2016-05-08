@@ -20,24 +20,52 @@ foreach($calendar as $key => $year) {
 
           <div class="trow">
 
-            <div class="tcell">
-              <?php echo strftime('%e/%m', $key) ?>
-            </div>    
+              <div class="tcell tcelldate">
+                <?php echo strftime('%a', $key) . "&nbsp;" . strftime('%e/%m', $key) ?>
+              </div>    
 
-            <div class="tcell tcellright">        
+              <div class="tcell tcellright">        
 
-              <ul>
-                <?php foreach($day as $key => $event) { ?>
-                  <li>
-                    <a href="<?php echo $event["link"] ?>">
-                      <?php echo $event["title"] . "</a>";
-                      if($event["venue"]) {
-                      echo ", " . $event["venue"]->title();
-                    } ?>
-                  </li>
-                <?php } ?>
-              </ul>
-            </div>
+                <ul>
+                  <?php foreach($day as $key => $event) { ?>
+                    <li>
+
+                      <?php echo 
+                        html::a($event["link"], $event["title"]);
+                        if($event["venue"]) {
+                          echo ", " . $event["venue"]->title();
+                        }
+
+
+                        // $objDateTime = new DateTime($event["date"]);
+                        // $isoDate = $objDateTime->format(DateTime::ISO8601);
+                        // echo $isoDate;
+                      ?>
+
+                      <script type="application/ld+json">
+                      {
+                        "@context": "http://schema.org",
+                        "@type": "MusicEvent",
+                        <?php if($event["venue"]) { ?>
+                          "location": {
+                            "@type": "MusicVenue",
+                            "name": "<?php echo $event["venue"]->title() ?>",
+                            "address": "<?php echo $event["venue"]->address() ?>"
+                          },
+                        <?php } ?>
+                        "name": "<?php echo $event["title"] ?>",
+                        "startDate": "<?php echo $event["isodate"] ?>",
+                        "url": "<?php echo $event["link"] ?>"
+                      }
+                      </script>
+
+                    </li>
+                  <?php } ?>
+                </ul>
+              </div>
+
+            
+
 
           </div>
     

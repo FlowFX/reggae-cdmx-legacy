@@ -16,10 +16,10 @@
     <meta property="og:image" content="<?php echo $image->url() ?>">
   <?php } ?>
     
-  <meta property="og:locale" content="es">
+  <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="<?php echo $site->title() ?>">
   <meta property="og:title" content="<?php echo $page->title() ?>">
-  <meta property="og:type" content="website">
+
   <meta property="og:url" content="<?php echo $page->url() ?>">
 
   <?php echo css('assets/css/style.css') ?>
@@ -29,4 +29,4 @@
 
   <div class="container <?php echo $page->template() ?>">
 
-    <h1><?php echo $site->title()->html() ?></h1>
+    <h1><a href="<?php echo $site->url() ?>"><?php echo $site->title()->html() ?></a></h1>

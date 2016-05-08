@@ -16,7 +16,10 @@ return function($site, $pages, $page) {
       $venue = $site->find('venues')->find($venue);
     }
     if($flyer = $event->image()) {
-      $flyer = $flyer->url();
+      $flyer = $flyer;
+      $flyerSmall = thumb($flyer, array('width' => 370), false);
+      $flyerMedium = thumb($flyer, array('width' => 450), false);
+      $flyerLarge = thumb($flyer, array('width' => 610), false);
     }
 
     $calendar[strftime('%A',$event->date())][] = array(
@@ -25,10 +28,14 @@ return function($site, $pages, $page) {
       "fbLink"  => $event->fbLink(),
       "link" => $event->url(),
       "venue" => $venue,
-      "flyer" => $flyer
+      "flyer" => $flyer,
+      "flyerSmall" => $flyerSmall,
+      "flyerMedium" => $flyerMedium,
+      "flyerLarge" => $flyerLarge
     );
 
   }
+
 
   // pass $calendar to template
   return compact('calendar','start','end');

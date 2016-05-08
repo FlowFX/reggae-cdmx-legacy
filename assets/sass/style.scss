@@ -25,11 +25,21 @@ body {
   background-color: black;
 }
 .container {
-  padding: 0.5em 1em;
+  padding: 0.9rem 0.5rem;
+  //padding: 0.5em 0.5rem;
+}
+@media (min-width: 40.0rem) { 
+  .container {
+    padding: 0.9rem 1rem;
+  }
 }
 
 a {
   text-decoration: underline;
+}
+h1 a {
+  text-decoration: none;
+  color: white;
 }
 
 li {
@@ -41,6 +51,8 @@ span.date {
 }
 
 
+
+
 // Preview
 img {
 	width: 100%;
@@ -49,15 +61,21 @@ img {
 	margin: 0;
 	padding: 0;
 }
-.preview .column {
-  max-width: 369px;
-}
+
 .preview h2 {
   font-size: 1.5em;
 }
 .preview h3 {
   margin-top: 1.0em;
 }
+
+
+@media (min-width: 50.0rem) { 
+  .preview .column {
+    max-width: 33%;
+  }
+}
+
 
 
 // Footer
@@ -98,4 +116,14 @@ padding-right: 0 !important;
 .tseparator {
   display: block;
   height: 1.0em;
+}
+
+// day and date linebreak for very small screens. prevent linebreak on large screens.
+.tcelldate {
+  font-size: 90%;
+}
+@media (min-width: 40.0rem) { 
+  .tcelldate {
+    font-size: inherit;
+  }
 }

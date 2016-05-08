@@ -29,5 +29,5 @@ if (file_exists($license)) {
 }
 
 
-// Use ImageMagick
-c::set('thumbs.driver', 'im');
+// https://github.com/groenewege/kirby-auto-publish
+c::set('autopublish.templates', array('event'));
