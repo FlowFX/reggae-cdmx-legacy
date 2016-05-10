@@ -35,12 +35,9 @@
  
     <?php if($page->fbLink()->isNotEmpty()) {
 
-?>
-     <a href="<?php echo $page->fbLink() ?>"
-        data-app="<?php echo $page->fbDeepLink() ?>"
-        title="Evento de Facebook">
-        Facebook</a>
-    <?php } ?>
+      echo html::a($page->fbLink(), $text = "Facebook", $attr = array('title' => "Evento de Facebook", 'data-app' => $page->fbDeepLink()));
+      
+     } ?>
 
 </p>
 
