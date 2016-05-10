@@ -5,20 +5,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  <title><?php echo $site->title()->html() ?></title>
-  <meta name="description" content="<?php echo excerpt($page->text()) ?>">
+  <?php
+
+    if($page->parent() == 'events') {
+
+      $title = $page->title();
+
+      $description = strtoupper(strftime('%A %e %B', $page->date()));
+
+      if($page->venue()->isNotEmpty()) {
+        $title = $title . " @ " . $page->venueTitle();
+        $description = $description . ", " . $page->venueTitle();
+      }
+
+      if($page->text()->isNotEmpty()) {
+        $description = $description . " :: " . esc($page->text());  
+      }
+
+    } else {
+
+      $title = $page->title();
+      $description = excerpt($page->text());  
+
+    }
+    
+  ?>
+
+  <title><?php echo $title ?></title>
+  <meta property="og:title" content="<?php echo $title ?>">
+
   <link rel="canonical" href="<?php echo $page->url() ?>">
-
   <meta property="fb:pages" content="1732208677016508" />
-  <meta property="og:description" content="<?php echo excerpt($page->text()) ?>">
 
+  <meta name="description" content="<?php echo $description ?>">
+  <meta property="og:description" content="<?php echo $description ?>">
+
+  
   <?php if($image = $page->image()) { ?>
     <meta property="og:image" content="<?php echo $image->url() ?>">
   <?php } ?>
     
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="<?php echo $site->title() ?>">
-  <meta property="og:title" content="<?php echo $page->title() ?>">
+  
 
   <meta property="og:url" content="<?php echo $page->url() ?>">
 
