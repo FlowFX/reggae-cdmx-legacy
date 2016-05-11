@@ -1,5 +1,7 @@
 <?php
 
+c::set('debug',false);
+
 // https://getkirby.com/docs/cheatsheet/options/thumbs-driver
 c::set('thumbs.driver', 'im');
 

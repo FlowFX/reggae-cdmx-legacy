@@ -1,5 +1,7 @@
 <?php
 
+c::set('debug',false);
+
 c::set('thumbs.driver', 'im');
 
 c::set('cachebuster', true);
