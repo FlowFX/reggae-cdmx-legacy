@@ -58,9 +58,4 @@
 
   <div class="container <?php echo $page->template() ?>">
 
-    <?php if($user = $site->user()): ?>
-      <a href="/panel/pages/<?php echo $page->uri() ?>/edit" class="panel">EDIT</a>
-    <?php endif ?>
-
-
     <h1><a href="<?php echo $site->url() ?>"><?php echo $site->title()->html() ?></a></h1>
