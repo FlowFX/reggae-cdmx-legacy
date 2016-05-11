@@ -6,6 +6,7 @@
 /content/*
 deploy.sh
 deploy-live.sh
+deploy-staging.sh
 deploy-exclude.txt
 google*.html
 license.php
