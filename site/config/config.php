@@ -1,5 +1,6 @@
 <?php
 
+c::set('debug',true);
 
 c::set('languages', array(
   array(
