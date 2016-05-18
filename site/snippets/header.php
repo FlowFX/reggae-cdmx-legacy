@@ -25,7 +25,7 @@
     } else {
 
       $title = $page->title();
-      $description = excerpt($page->text());  
+      $description = excerpt($page->text(), 50, 'words');  
 
     }
     
