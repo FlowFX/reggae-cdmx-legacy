@@ -11,12 +11,26 @@
   <!-- The date and time when your article was originally published -->
   <!-- <time class="op-published" datetime="<?php // echo $page->date('Y-m-d H:i:s T') ?>"></time> -->
 
+  <?php 
+
+  foreach($calendar as $key => $day) {
+
+    $href = '#' . esc($key);
+    $text = $key;
+    echo html::a($href, $text, array('class' => "button button-outline"));
+    
+  }
+
+    
+  ?>
+
 </header>
 
   <?php
 
   foreach($calendar as $key => $day):
 
+    echo '<a name="' . esc($key) . '"></a>';
     echo "<h3>" . $key . "</h3>" ?>
 
   <ul>
