@@ -17,6 +17,7 @@ fields:
     time:
       format: 24
       interval: 30
+      default: 19:00
   venue:
     label: Venue
     type:  select
