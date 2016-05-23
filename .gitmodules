@@ -10,3 +10,6 @@
 [submodule "assets/js/deep-link.js"]
 	path = assets/js/deep-link.js
 	url = https://github.com/timseverien/deep-link.js.git
+[submodule "site/plugins/typography"]
+	path = site/plugins/typography
+	url = https://github.com/fabianmichael/kirby-typography.git
