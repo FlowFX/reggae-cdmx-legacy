@@ -28,6 +28,8 @@
 
   <?php
 
+
+
   foreach($calendar as $key => $day):
 
     echo '<a name="' . esc($key) . '"></a>';
