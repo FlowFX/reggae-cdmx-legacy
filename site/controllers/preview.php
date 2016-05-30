@@ -20,6 +20,11 @@ return function($site, $pages, $page) {
       $flyerSmall = thumb($flyer, array('width' => 370), false);
       $flyerMedium = thumb($flyer, array('width' => 450), false);
       $flyerLarge = thumb($flyer, array('width' => 610), false);
+    } else {
+      $flyer = null;
+      $flyerSmall = null;
+      $flyerMedium = null;
+      $flyerLarge = null;
     }
 
     $calendar[strftime('%A',$event->date())][] = array(
