@@ -18,8 +18,9 @@
       <link><?php echo xml($item->url()) ?></link>
       <guid><?php echo xml($item->id()) ?></guid>
       <pubDate><?php echo $datefield == 'modified' ? $item->modified('r') : $item->date('r', $datefield) ?></pubDate>
+      <author><?php echo xml() ?></author>
       
-      <description><![CDATA[<?php echo $item->{$textfield}() ?>]]></description>
+      <content:encoded><![CDATA[<?php echo $item->{$textfield}() ?>]]></content>
     </item>
     <?php endforeach ?>
 
