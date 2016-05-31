@@ -17,10 +17,59 @@
       <title><?php echo xml($item->title()) ?></title>
       <link><?php echo xml($item->url()) ?></link>
       <guid><?php echo xml($item->id()) ?></guid>
-      <pubDate><?php echo $datefield == 'modified' ? $item->modified('r') : $item->date('r', $datefield) ?></pubDate>
-      <author><?php echo xml() ?></author>
+      <pubDate><?php echo $item->date('c') ?></pubDate>
+
+      <content:encoded>
+        <![CDATA[
+
+
+          <!doctype html>
+<html lang="es" prefix="op: http://media.facebook.com/op#">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="<?php echo $item->url() ?>">
+    <!-- <link rel="stylesheet" title="default" href="#"> -->
+    <title><?php echo $item->title() ?></title>
+    <meta property="fb:article_style" content="reggae">
+  </head>
+<body>
+  <article>
+    <header>
+      <!-- The cover image shown inside your article --> 
+      <?php if(!empty($item->image())) { ?>
+      <figure>
+        <img src="<?php echo $item->image()->url() ?>"/>
+        <figcaption>Header image description becomes visible when image has been tapped and expanded.</figcaption>
+      </figure>
+      <?php } ?>
       
-      <content:encoded><![CDATA[<?php echo $item->{$textfield}() ?>]]></content>
+      <!-- The title and subtitle shown in your article -->
+      <h1><?php echo $item->title() ?></h1>
+      <h2> Use this article to experiment with the look and feel of your brand in Instant Articles   </h2>
+
+      <!-- A kicker for your article -->
+      <h3 class="op-kicker">
+        Customizable Design Elements
+      </h3>
+
+      <!-- The author of your article -->
+      <address>
+        <?php echo xml($author) ?>
+      </address>
+
+      <!-- The published and last modified time stamps -->
+      <!-- <time class="op-published" dateTime="2016-2-04T09:00">February 4th 2016, 9:00 AM</time> -->
+      <!-- <time class="op-modified" dateTime="2016-2-04T09:00">February 4th 2016, 9:00 AM</time> -->
+      </header>
+
+
+      <?php echo $item->instantarticle() ?>
+
+      </article></body></html>
+
+        ]]>    
+      </content:encoded>
+      <description><![CDATA[<?php echo xml(html($item->listArtists())) ?>]]></description>
     </item>
     <?php endforeach ?>
 

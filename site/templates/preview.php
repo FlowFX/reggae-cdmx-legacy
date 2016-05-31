@@ -1,5 +1,14 @@
 <?php snippet('header') ?>
 
+<?php 
+$start = $page->date();
+$end = strtotime('+6 days', $start);
+
+$calendar = $page->calendar($start,$end);
+
+?>
+
+
 
 <header>
 
@@ -20,7 +29,6 @@
     echo html::a($href, $text, array('class' => "button button-outline"));
     
   }
-
     
   ?>
 
