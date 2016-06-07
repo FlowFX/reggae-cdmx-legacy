@@ -19,6 +19,9 @@ page::$methods['calendar'] = function($page,$start,$end) {
       $flyerLarge = thumb($flyer, array('width' => 610), false);
     }
 
+
+    // maybe use yyyy-mm-dd as key instead of name of day so the array can be sorted easily
+    // above, sort by featured first. or last. and then by day.
     $calendar[strftime('%A',$event->date())][] = array(
       "title" => $event->title(),
       "date" => $event->date('d/m'),
@@ -28,12 +31,28 @@ page::$methods['calendar'] = function($page,$start,$end) {
       "flyer" => $flyer,
       "flyerSmall" => $flyerSmall,
       "flyerMedium" => $flyerMedium,
-      "flyerLarge" => $flyerLarge
+      "flyerLarge" => $flyerLarge,
+      "priority" => $event->featured()
     );
 
   }
 
   return $calendar;
+};
+
+page::$methods['previewModified'] = function($page) {
+
+	$start = $page->date();
+$end = strtotime('+6 days', $start);
+
+		$events = site()->children()->find('events')->children()->filterBy('date', '>=', $start)->filterBy('date', '<=', $end)->visible()->sortBy('date', 'asc');
+
+		$modified = 0;
+		foreach($events as $event) {
+			$modified = max($modified, $event->modified('c'));
+		}
+
+		return $modified;
 };
 
 
@@ -44,7 +63,7 @@ page::$methods['listArtists'] = function($page) {
 	$start = $page->date();
 	$end = strtotime('+6 days', $start);
 
-	$events = site()->children()->find('events')->children()->filterBy('date', '>=', $start)->filterBy('date', '<=', $end)->visible()->sortBy('date', 'asc');  // duplicate from calendar method
+	$events = site()->children()->find('events')->children()->filterBy('date', '>=', $start)->filterBy('date', '<=', $end)->visible()->sortBy('date', 'asc')->sortBy('featured','desc');  // duplicate from calendar method
 	// $events = $events->shuffle();
 
 	$thisTemplate = $page->intendedTemplate();
@@ -88,18 +107,27 @@ page::$methods['instantarticle'] = function($page) {
 
 	$result = "";
 
+
+	$result .= '<p>' . excerpt($page->listArtists(), 20, 'words') . '</p>';
+
 	// $result = html($result);
 
   foreach($calendar as $key => $day) {
 
-  $result .= html::tag('h2', $key );
+  $result .= html::tag('h1', ucwords($key) );
 
 
   $result .= '<ul>';
     foreach($day as $key => $event) {
 
-   		$result .= '<li>' . html::a($event["link"], $event["title"]) . '</li>' . PHP_EOL;
-              
+    	if($event["venue"]) {
+    		$location = ", " . $event["venue"]->title();
+    	} else {
+    		$location = "";
+    	}
+
+   		$result .= '<li>' . html::a($event["link"], $event["title"]) . $location . '</li>' . PHP_EOL;
+   		        
               }
        $result .= '</ul>' . PHP_EOL;
 
@@ -109,7 +137,7 @@ page::$methods['instantarticle'] = function($page) {
        foreach($day as $key => $event) {
 
         if($event["flyer"]) {
-        	$result .= '<figure><img src="' . $event["flyer"]->url() . '"></figure>';
+        	$result .= '<figure><img src="' . $event["flyer"]->url() . '" data-mode="aspect-fig" data-feedback="fb:likes, fb:comments"></figure>';
       	}
 
       }     
