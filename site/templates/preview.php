@@ -5,8 +5,6 @@
 
   <h2>Los eventos de <?php echo strftime('%e de %B', $start) . " a " . strftime('%e de %B', $end) ?>.</h2>
 
-  <p>Si falta algo, <a href="mailto:flowfx@reggae-cdmx.com" title="¡Envíame un correo electrónico!">¡Envíame un correo!</a><br/>
-  <small>O <a href="https://www.facebook.com/Reggae-CDMX-1732208677016508/">¡deja un comentario en la página Facebook!</a></small></p>
 
   <!-- The date and time when your article was originally published -->
   <!-- <time class="op-published" datetime="<?php // echo $page->date('Y-m-d H:i:s T') ?>"></time> -->
@@ -86,6 +84,13 @@
    
 
   <?php endforeach ?>
+
+  <hr>
+
+  <p>Ver toda la cartelera en <?php echo html::a($site->url(), "reggae-cdmx.com") ?>.</p>
+
+  <p>Si falta un algo, <a href="mailto:flowfx@reggae-cdmx.com" title="¡Envíame un correo electrónico!">¡Envíame un correo!</a><br/>
+  <small>O <a href="https://www.facebook.com/Reggae-CDMX-1732208677016508/">¡deja un comentario en la página Facebook!</a></small></p>
 
 
 <?php snippet('footer') ?>
