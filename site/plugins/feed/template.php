@@ -44,7 +44,7 @@
 
      <!-- A kicker for your article --> 
         <h3 class="op-kicker">
-          <?php echo excerpt($item->listArtists(), 20, 'words') ?>
+          <?php echo excerpt($item->listArtists(), 30, 'words') ?>
         </h3>
 
         <!-- The author of your article -->

@@ -108,10 +108,6 @@ page::$methods['instantarticle'] = function($page) {
 	$result = "";
 
 
-	$result .= '<p>' . excerpt($page->listArtists(), 20, 'words') . '</p>';
-
-	// $result = html($result);
-
   foreach($calendar as $key => $day) {
 
   $result .= html::tag('h1', ucwords($key) );
