@@ -12,6 +12,7 @@ Pages::$methods['feed'] = function($pages, $params = array()) {
   $defaults = array(
     'url'         => url(),
     'title'       => 'Feed',
+    'author'      => '',
     'description' => '',
     'link'        => url(),
     'datefield'   => 'date',

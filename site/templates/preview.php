@@ -1,5 +1,14 @@
 <?php snippet('header') ?>
 
+<?php 
+$start = $page->date();
+$end = strtotime('+6 days', $start);
+
+$calendar = $page->calendar($start,$end);
+
+?>
+
+
 
 <header>
 
@@ -18,7 +27,6 @@
     echo html::a($href, $text, array('class' => "button button-outline"));
     
   }
-
     
   ?>
 
@@ -26,10 +34,13 @@
 
   <?php
 
+
+
   foreach($calendar as $key => $day):
 
     echo '<a name="' . esc($key) . '"></a>';
     echo "<h3>" . $key . "</h3>" ?>
+
 
   <ul>
       <?php foreach($day as $key => $event): ?>

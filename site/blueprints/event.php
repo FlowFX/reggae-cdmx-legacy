@@ -9,6 +9,14 @@ fields:
     label: Title
     type:  text
     required: true
+    width: 3/4
+  featured:
+    label: Priority
+    type: number
+    min: 0
+    max: 5
+    default: 0
+    width: 1/4
   date:
     label: Date and Time
     type:  datetime
