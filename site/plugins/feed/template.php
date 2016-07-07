@@ -41,11 +41,7 @@
       
       <!-- The title and subtitle shown in your article -->
       <h1><?php echo html($item->title()) ?></h1>
-
-     <!-- A kicker for your article --> 
-        <h3 class="op-kicker">
-          <?php echo excerpt($item->listArtists(), 30, 'words') ?>
-        </h3>
+      <h2><?php echo excerpt($item->listArtists(), 25, 'words') ?></h2>
 
         <!-- The author of your article -->
         <address>
@@ -83,10 +79,15 @@
       <figure class="op-tracker">
         <iframe>
           <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-34450382-9','auto');ga('send','pageview')
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-34450382-9', 'auto');
+            ga('send', 'pageview');
+
           </script>
-          <script src="https://www.google-analytics.com/analytics.js" async defer></script>
         </iframe>
       </figure>
 

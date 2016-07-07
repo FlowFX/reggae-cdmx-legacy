@@ -35,6 +35,7 @@
 
   <link rel="canonical" href="<?php echo $page->url() ?>">
   <meta property="fb:pages" content="1732208677016508" />
+  <meta property="fb:app_id" content="1139885196063376" />
 
   <meta name="description" content="<?php echo $description ?>">
   <meta property="og:description" content="<?php echo $description ?>">
