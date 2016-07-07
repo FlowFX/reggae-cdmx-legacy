@@ -7,9 +7,10 @@
 
   <?php
 
-    if($page->parent() == 'events') {
+    $title = $page->title();
+    $description = excerpt($page->text(), 50, 'words');  
 
-      $title = $page->title();
+    if($page->parent() == 'events') {
 
       $description = strtoupper(strftime('%A %e %B', $page->date()));
 
@@ -22,12 +23,10 @@
         $description = $description . " :: " . esc($page->text());  
       }
 
-    } else {
+    } elseif($page->intendedTemplate() == 'preview') {
+      $description = $page->listArtists();
 
-      $title = $page->title();
-      $description = excerpt($page->text());  
-
-    }
+    } 
     
   ?>
 
@@ -36,6 +35,7 @@
 
   <link rel="canonical" href="<?php echo $page->url() ?>">
   <meta property="fb:pages" content="1732208677016508" />
+  <meta property="fb:app_id" content="1139885196063376" />
 
   <meta name="description" content="<?php echo $description ?>">
   <meta property="og:description" content="<?php echo $description ?>">

@@ -3,7 +3,7 @@
 c::set('debug',false);
 
 // https://getkirby.com/docs/cheatsheet/options/thumbs-driver
-c::set('thumbs.driver', 'im');
+// c::set('thumbs.driver', 'im');
 
 // https://github.com/getkirby/plugins/tree/master/cachebuster
 c::set('cachebuster', true);

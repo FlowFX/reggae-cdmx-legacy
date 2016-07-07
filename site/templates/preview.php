@@ -1,23 +1,46 @@
 <?php snippet('header') ?>
 
+<?php 
+$start = $page->date();
+$end = strtotime('+6 days', $start);
+
+$calendar = $page->calendar($start,$end);
+
+?>
+
+
 
 <header>
 
   <h2>Los eventos de <?php echo strftime('%e de %B', $start) . " a " . strftime('%e de %B', $end) ?>.</h2>
 
-  <p>Si falta algo, <a href="mailto:flowfx@reggae-cdmx.com" title="¡Envíame un correo electrónico!">¡Envíame un correo!</a><br/>
-  <small>O <a href="https://www.facebook.com/Reggae-CDMX-1732208677016508/">¡deja un comentario en la página Facebook!</a></small></p>
 
   <!-- The date and time when your article was originally published -->
   <!-- <time class="op-published" datetime="<?php // echo $page->date('Y-m-d H:i:s T') ?>"></time> -->
+
+  <?php 
+
+  foreach($calendar as $key => $day) {
+
+    $href = '#' . esc($key);
+    $text = $key;
+    echo html::a($href, $text, array('class' => "button button-outline"));
+    
+  }
+    
+  ?>
 
 </header>
 
   <?php
 
+
+
   foreach($calendar as $key => $day):
 
+    echo '<a name="' . esc($key) . '"></a>';
     echo "<h3>" . $key . "</h3>" ?>
+
 
   <ul>
       <?php foreach($day as $key => $event): ?>
@@ -72,6 +95,13 @@
    
 
   <?php endforeach ?>
+
+  <hr>
+
+  <p>Ver toda la cartelera en <?php echo html::a($site->url(), "reggae-cdmx.com") ?>.</p>
+
+  <p>Si falta un algo, <a href="mailto:flowfx@reggae-cdmx.com" title="¡Envíame un correo electrónico!">¡Envíame un correo!</a><br/>
+  <small>O <a href="https://www.facebook.com/Reggae-CDMX-1732208677016508/">¡deja un comentario en la página Facebook!</a></small></p>
 
 
 <?php snippet('footer') ?>
